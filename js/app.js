@@ -19,6 +19,16 @@ function loadNames(e) {
     if(origin !== ''){
         url += `?region=${origin}&`;
     }
+    //Read the genre and append to the URL
+    if(genre !== ''){
+        url += `?gender=${genre}&`;
+    }
+    //Read the amount and append to the URL
+    if(amount !== ''){
+        url += `?amount=${amount}&`;
+    }
+
+
 
     console.log(url);
 
