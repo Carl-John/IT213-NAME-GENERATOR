@@ -38,7 +38,20 @@ function loadNames(e) {
     xhr.onload = function() {
         if(this.status === 200) {
             const names = JSON.parse( this.responseText );
-            console.log(names);
+            
+            //Insert into the HTML
+
+            let html = '<h2>Generated Names</2>';
+            html += '<ul names"list">';
+            names.forEach(function(name){
+                html +=`
+                    <li>${namae.name}</li>
+                `;
+            });
+            html += '</ul>';
+
+            document.querySelector('#result').innerHTML = html;
+
         }
     }
 
