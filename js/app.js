@@ -28,8 +28,21 @@ function loadNames(e) {
         url += `?amount=${amount}&`;
     }
 
+    //Ajax Call
+    const xhr = new XMLHttpRequest();
 
+    //Open the Connection
+    xhr.open('GET', url, true );
 
-    console.log(url);
+    //Execute the function
+    xhr.onload = function() {
+        if(this.status === 200) {
+            const names = JSON.parse( this.responseText );
+            console.log(names);
+        }
+    }
+
+    //Send the Request
+    xhr.send();
 
 }
